@@ -16,7 +16,7 @@ public class Main {
         for (int i = 0; i <characterArray.length ; i++)
         {
             int ascii = characterArray[i];
-            ascii= ascii-97;
+            ascii= ascii - 'a';
 
             System.out.print(huffmanCodes[ascii]+" ");
 
@@ -27,7 +27,12 @@ public class Main {
         {
             int ascii = characterArray[i];
 
-            System.out.print(Integer.toBinaryString(ascii)+" ");
+
+            String binaryWaali = Integer.toBinaryString(ascii);
+            int length = binaryWaali.length();
+            int remaingBits = 8 -length;
+            String missingZeroes = "0".repeat(remaingBits);
+            System.out.print(missingZeroes+binaryWaali+" ");
 
         }
         scanner.close();
